@@ -58,7 +58,9 @@ class Pancake extends React.Component {
 
   render() {
     const { timeCooked, flippedAt } = this.state;
-    const firstSide = Boolean(this.state.flippedAt === null && typeof flippedAt !== "number");
+    const firstSide = Boolean(
+      this.state.flippedAt === null && typeof flippedAt !== "number"
+    );
     const status = this.getPancakeStatus();
 
     return (
@@ -79,6 +81,14 @@ class Pancake extends React.Component {
         </div>
       </div>
     );
+  }
+
+  componentDidMount() {
+    this.startInterval();
+  }
+
+  componentWillUnmount() {
+    this.cleanUpInterval();
   }
 }
 
