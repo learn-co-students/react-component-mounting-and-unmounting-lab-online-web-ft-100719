@@ -4,6 +4,10 @@ import Pancake from './Pancake';
 
 class Game extends React.Component {
 
+  componentDidMount(){
+    this.setCurrentTime()
+  }
+
   constructor(props) {
     super(props);
 
